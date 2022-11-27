@@ -1,0 +1,7 @@
+from pymongo import Mongoclient
+from pprint import pprint
+MONGO_URL = 'mongodb://mongo:27017'
+client = Mongoclient(MONGO_URL)
+db = client.admin
+dbs_list = db.command("listDatabases")
+pprint(dbs_list)
